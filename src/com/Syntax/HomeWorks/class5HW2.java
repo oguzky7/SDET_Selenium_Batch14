@@ -14,15 +14,20 @@ public class class5HW2 {
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.ebay.com/");
         driver.manage().window().maximize();
-        List<WebElement> ebayLinks = driver.findElements(By.className("scnd"));
-        for (WebElement ebayLink : ebayLinks) {
-            String link = ebayLink.getAttribute("href");
-            System.out.println(link);
+        WebElement AllCategories = driver.findElement(By.xpath("//select[@id ='gh-cat']"));
+        Select sel = new Select(AllCategories);
+        List<WebElement> options = sel.getOptions();
+        for (WebElement category : options) {
+            String value = category.getText();
+            System.out.println(value);
+
         }
-        driver.get(driver.findElement(By.xpath("//a[contains(@href, 'Computer') and @class = 'scnd']")).getAttribute("href"));
-        driver.findElement(By.xpath("//input[@placeholder='Search for anything']")).click();
+        sel.selectByVisibleText("Computers/Tablets & Networking");
+
+        System.out.println("****************************************************");
+                driver.findElement(By.xpath("//input[@type ='submit']")).click();
         String title = driver.getTitle();
-        System.out.println(title);
+        System.out.println("Title : " +title);
         if (title.equals("Computers, Laptops, Tablets & Network Hardware for Sale - eBay")){
             System.out.println("Title verified");
         }else{
