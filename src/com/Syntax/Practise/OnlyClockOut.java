@@ -8,7 +8,8 @@ import org.openqa.selenium.support.ui.Select;
 
 public class OnlyClockOut {
     public static void main(String[] args) throws InterruptedException {
-        //Thread.sleep(4200000);
+        System.out.println("Process has began");
+        Thread.sleep(3300000);
         System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://timeclock.winklerpool.com/mymitc/2/");
@@ -25,15 +26,11 @@ public class OnlyClockOut {
         //Select selClockOut = new Select(options);
         //Thread.sleep(1000);
         //selClockOut.selectByVisibleText("03287 - Atrium @ Metro West"); // 03287 - Atrium @ Metro West
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         driver.findElement(By.xpath("//button[@type= 'submit' and @id='Bco']")).click();
         Thread.sleep(2000);
+        System.out.println("Clocked out");
         driver.quit();
-
-
-
-
-
 
 
     }

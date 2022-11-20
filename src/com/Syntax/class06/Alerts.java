@@ -1,4 +1,4 @@
-package com.Syntax.class6;
+package com.Syntax.class06;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
