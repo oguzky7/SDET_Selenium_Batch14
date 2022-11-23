@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.concurrent.TimeUnit;
 
 public class WaitDemo2 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         //        set the path to the driver to link it with our class    on mac u dont need .exe on windows u need .exe
         System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
         // create a WebDriver instance
@@ -33,5 +33,8 @@ public class WaitDemo2 {
 //        handle the alert
         Alert alert1 = driver.switchTo().alert();
         alert1.accept();
+
+        Thread.sleep(2000);
+        driver.quit();
     }
 }

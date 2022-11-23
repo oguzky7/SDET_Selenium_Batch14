@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class DynamicTables {
+public class  DynamicTables {
 
     public static void main(String[] args) {
         //        set the path to the driver to link it with our class    on mac u dont need .exe on windows u need .exe
