@@ -56,7 +56,7 @@ public class class9_HW1 {
 
             }
             System.out.println("Checked");
-            driver.quit();
+            //driver.quit();
         }
 
     }
