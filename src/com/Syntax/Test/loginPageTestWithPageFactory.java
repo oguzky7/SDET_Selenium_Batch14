@@ -12,6 +12,8 @@ public class loginPageTestWithPageFactory {
         login.passwordfield.sendKeys("Hum@nhrm123");
         login.loginbtn.click();
 
+
+        CommonMethods.closeBroswer();  
     }
 
 }

@@ -20,9 +20,9 @@ public class jsExecutorScroll {
 //        scroll down
         JavascriptExecutor js= (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,500)");
-        Thread.sleep(3000);
+        Thread.sleep(1500);
 //        scroll up
-        js.executeScript("window.scrollBy(0,-500)");
+        js.executeScript("window.scrollBy(0,-200)");
 
     }
 }

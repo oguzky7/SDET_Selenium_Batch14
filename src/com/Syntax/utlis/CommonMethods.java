@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class CommonMethods {
+public class  CommonMethods {
 //    the webDriver instance is accessible in all the methods now
    public static WebDriver driver;
     public static void openWithSpecificUrl(String url) {
