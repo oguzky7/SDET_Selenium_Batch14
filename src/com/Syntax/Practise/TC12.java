@@ -26,16 +26,28 @@ public class TC12 {
 
         //boolean page = true;
 
-        List<WebElement> empList = driver.findElements(By.xpath("//table[@id='resultTable']/tbody/tr/td[2]"));
-        for (int i = 1; i < 3; i++) {
-            driver.findElement(By.xpath("//table[@id='resultTable']/tbody/tr[" + i + "]/td[2]")).click();
-            //driver.findElement(By.xpath("//a[@id='menu_pim_viewPimModule']")).click();
-            //empList.get(i).click();
-            driver.findElement(By.xpath("//a[contains(@href,'JobDetails')]")).click();
-            driver.findElement(By.xpath("//input[@id='btnTerminateEmployement']")).click();
-            System.out.println(driver.findElement(By.xpath("//input[@id='dialogConfirm']")).isEnabled());
-            driver.findElement(By.xpath("//input[@class='btn reset']")).click();
-            driver.findElement(By.xpath("//a[@id='menu_pim_viewPimModule']")).click();
+        //List<WebElement> empList = driver.findElements(By.xpath("//table[@id='resultTable']/tbody/tr/td[2]"));
+        for (int j = 0; j < 98; j++) {
+            List<WebElement> empList = driver.findElements(By.xpath("//table[@id='resultTable']/tbody/tr/td[2]"));
+            System.out.println(empList.size());
+            for (int i = 1; i <= empList.size(); i++) {
+                driver.findElement(By.xpath("//table[@id='resultTable']/tbody/tr[" + i + "]/td[2]")).click();
+                //driver.findElement(By.xpath("//a[@id='menu_pim_viewPimModule']")).click();
+                //empList.get(i).click();
+                driver.findElement(By.xpath("//a[contains(@href,'JobDetails')]")).click();
+                driver.findElement(By.xpath("//input[@id='btnTerminateEmployement']")).click();
+                //System.out.println(driver.findElement(By.xpath("//input[@id='dialogConfirm']")).isEnabled());
+                if(driver.findElement(By.xpath("//input[@id='dialogConfirm']")).isEnabled()){
+                    System.out.println("Admin is able to terminate Employment");
+                }else if(!driver.findElement(By.xpath("//input[@id='dialogConfirm']")).isEnabled()){
+                    System.out.println("Admin is NOT ABLE TO TERMINATE EMPLOYMENT");
+                }
+                driver.findElement(By.xpath("//input[@class='btn reset']")).click();
+                //driver.findElement(By.xpath("//a[@id='menu_pim_viewPimModule']")).click();
+                driver.navigate().back();
+                driver.navigate().back();
+            }
+            driver.findElement(By.xpath("//a[@class='tiptip' and text()='Next']")).click();
         }
     }
 }
