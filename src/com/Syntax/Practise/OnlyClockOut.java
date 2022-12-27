@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 public class OnlyClockOut {
     public static void main(String[] args) throws InterruptedException {
         System.out.println("Process has began");
-        Thread.sleep(1300000);
+        Thread.sleep(1800000);
         System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://timeclock.winklerpool.com/mymitc/2/");
